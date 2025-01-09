@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://api.ipify.org?format=jsonp&callback=checkIP"></script>
+
+<script>
+  function checkIP(response) {
+    var blockedIPs = ['174.162.153.10', '174.162.153.10']; // List of IPs to block
+    var userIP = response.ip;
+
+    // Check if the user's IP is in the blocked list
+    if (blockedIPs.includes(userIP)) {
+        document.body.innerHTML = "<h1>Sorry, the creator of this website doesn't allow it to be used on school computers.</h1>";
+    }
+  }
+</script>
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
